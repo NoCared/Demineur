@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid{
+    border: black 3px solid;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:repeat(10, 1fr);
+}
+
+.case{
+    border: black 1px solid;
+    width: 30px;
+    height: 30px;
+}
