@@ -1,6 +1,6 @@
 class Case {
 
-    number = 0;
+    number = -1;
     isBomb = false;
     caseIndex = 0;
     isDisplayed = false;

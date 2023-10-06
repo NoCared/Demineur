@@ -1,8 +1,12 @@
 import { tab, cases } from "./setupGrid.js";
 
+function lookAt(index)
+{
+    return (0 <= index && index < tab.length) ? tab[index].number : -1;
+}
 
 function lookAround(index) {
-
+    let number = lookAt(index-10)
 }
 
 
