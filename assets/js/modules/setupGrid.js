@@ -8,9 +8,6 @@ function setUpTable() {
     let length = cases.length;
     while (length--) {
         const i = length;
-        cases[i].addEventListener("click", () => {
-            cases[i].classList.remove("hidden");
-        });
         tab[length] = new Case;
         tab[length].caseIndex = length;
     }

@@ -1,11 +1,15 @@
-function hideAll(tab){
+import { tab,cases } from "./setupGrid.js";
+
+function hideAll(){
     for (let i = 0; i < tab.length; i++) {
-        tab[i].classList.add("hidden");
+        cases[i].classList.add("hidden");
+        cases[i].isDisplayed = false;
     }
 };
-function showAll(tab){
+function showAll(){
     for (let i = 0; i < tab.length; i++) {
-        tab[i].classList.remove("hidden");
+        cases[i].classList.remove("hidden");
+        cases[i].isDisplayed = true;
     }
 };
 
