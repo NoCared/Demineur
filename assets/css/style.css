@@ -25,6 +25,7 @@ body{
     height: 30px;
     text-align: center;
     line-height: 30px;
+    font-weight: bold;
 }
 
 .backGreen{
@@ -38,38 +39,37 @@ body{
 
 /* CASES */
 .nb0{
-    content: '';
     background-color: rgb(243, 243, 154);
 }
 .nb1{
-    content: "1";
     color: blue;
 }
 .nb2{
-    content: "2";
     color: green;
 }
 .nb3{
-    content: "3";
     color: red;
 }
 .nb4{
-    content: "4";
     color: orange;
 }
 .nb5{
-    content: "5";
     color: magenta;
 }
 .nb6{
-    content: "6";
     color: blue;
 }
 .nb7{
-    content: "7";
     color: darkmagenta;
 }
 .nb8{
-    content: "8";
     color: salmon;
+}
+
+
+/* HIDDEN */
+
+.hidden{
+    background-color: orange;
+    content-visibility: hidden;
 }
