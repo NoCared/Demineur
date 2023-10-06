@@ -28,3 +28,7 @@ body{
 .backGreen{
     background-color: green;
 }
+
+.bombCase{
+    background-color: red;
+}
