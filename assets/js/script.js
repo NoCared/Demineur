@@ -1,4 +1,29 @@
 
+class Case {
+    constructor(isBomb) {
+        this.setIsBomb(isBomb);
+    }
+
+
+    number;
+    isBomb;
+
+    setNumber(value) {
+        this.number = value;
+    }
+    setIsBomb(value) {
+        this.isBomb = value;
+    }
+
+    getNumber() {
+        return this.number;
+    }
+    getIsBomb(){
+        return this.isBomb;
+    }
+}
+
+
 const cases = document.querySelectorAll(".case");
 const tab = [];
 
@@ -58,14 +83,17 @@ function getBombNumberNear(index) {
 function fillNumber() {
     for (let i = 0; i < cases.length; i++) {
         if (checkIfBomb(i) == false) {
-            cases[i].innerText = getBombNumberNear(i);
+            const bombNumber = getBombNumberNear(i);
+            cases[i].classList.add(`nb${bombNumber}`);
         }
     }
 }
 
 
 
-
+let exemple = new Case(false);
+exemple.setNumber(5);
+console.log(exemple.number);
 
 setUpTable();
 putRandomBombs();
