@@ -85,6 +85,10 @@ function fillNumber() {
         if (checkIfBomb(i) == false) {
             const bombNumber = getBombNumberNear(i);
             cases[i].classList.add(`nb${bombNumber}`);
+            if (bombNumber != 0)
+            {
+                cases[i].innerText = bombNumber;
+            }
         }
     }
 }
