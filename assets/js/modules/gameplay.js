@@ -5,9 +5,12 @@ function verify(index)
     return (0 <= index && index < tab.length) ? tab[index].number : -1;
 }
 
-function lookAt(index)
+function lookAt(previousNumber, index)
 {
-
+ if (previousNumber===0 && verify(index)>0)
+{
+ 
+}
 }
 
 function lookAround(index) {
