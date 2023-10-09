@@ -1,5 +1,5 @@
 import { hideAll, showAll } from "./display.js";
-import { cases } from "./setupGrid.js";
+import { tab } from "./setupGrid.js";
 import { discover } from "./gameplay.js";
 
 let revealed = false;
@@ -12,9 +12,9 @@ function setupInput() {
         }
     });
 
-    for (let i = 0; i < cases.length;i++)
+    for (let i = 0; i < tab.length;i++)
     {
-        cases[i].addEventListener("click", () => {
+        tab[i].refHtmlElement.addEventListener("click", () => {
 
             discover(i);
         });

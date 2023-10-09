@@ -1,4 +1,4 @@
-import { tab, cases } from "./setupGrid.js";
+import { tab } from "./setupGrid.js";
 
 function verify(index) {
     return (0 <= index && index < tab.length) ? tab[index].number : -1;
@@ -17,20 +17,22 @@ function lookAt(previousIndex, index) {
 }
 
 function lookAround(index) {
-    for (let i = -1; i <= 1; i++) {
 
-        const eulerCurrent = Math.floor(index / 10);
-        const eulerNext = Math.floor((index + i) / 10);
-        if (eulerCurrent === eulerNext) {
-            lookAt(index, index - 10 + i);
-            lookAt(index, index + i);
-            lookAt(index, index + 10 + i);
-        }
+    let eulerCurrent = Math.floor(index / 10);
+    let eulerPrevious = Math.floor((index - 1) / 10);
+    let eulerNext = Math.floor((index + 1) / 10);
+    lookAt(index, index - 10);
+    if (eulerCurrent === eulerPrevious) {
+        lookAt(index, index - 1);
     }
+    if (eulerCurrent === eulerNext) {
+        lookAt(index, index + 1);
+    }
+    lookAt(index, index + 10);
 }
 
 function openCase(index) {
-    cases[index].classList.remove("hidden");
+    tab[index].refHtmlElement.classList.remove("hidden");
     tab[index].isDisplayed = true;
 }
 

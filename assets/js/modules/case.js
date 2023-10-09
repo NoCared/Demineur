@@ -4,6 +4,7 @@ class Case {
     isBomb = false;
     caseIndex = 0;
     isDisplayed = false;
+    refHtmlElement;
 }
 
 export{Case};
