@@ -1,5 +1,5 @@
 import { tab } from "./setupGrid.js";
-import { sizeColumn,sizeRow } from "./setupGrid.js";
+import { sizeColumn, sizeRow } from "./setupGrid.js";
 
 function verify(index) {
     return (0 <= index && index < tab.length) ? tab[index].number : -1;
@@ -39,7 +39,7 @@ function openCase(index) {
 
 
 function discover(caseIndex) {
-    if (tab[caseIndex].isDisplayed === false) {
+    if (tab[caseIndex].isDisplayed === false && tab[caseIndex].isFlagged === false) {
         openCase(caseIndex);
         if (tab[caseIndex].isBomb) {
             console.log("LOSE");
@@ -50,5 +50,12 @@ function discover(caseIndex) {
     }
 }
 
+function putFlag(caseIndex) {
+    if (tab[caseIndex].isDisplayed === false) {
+        tab[caseIndex].isFlagged = !tab[caseIndex].isFlagged;
+        tab[caseIndex].refHtmlElement.classList.toggle("flag");
+    }
+}
 
-export { discover };
+
+export { discover, putFlag };

@@ -73,3 +73,10 @@ body{
     background-color: orange;
     content-visibility: hidden;
 }
+
+/* FLAG */
+
+.flag{
+    background-image: url("../img/flag.png");
+    background-size: cover;
+}

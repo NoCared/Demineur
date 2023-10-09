@@ -10,8 +10,6 @@ function setUpTable() {
     gridDiv.style.gridTemplateColumns = 'repeat(' + sizeColumn + ', 1fr)';
     gridDiv.style.gridTemplateRows = 'repeat(' + sizeRow + ', 1fr)';
 
-
-
     for (let i = 0; i < sizeRow * sizeColumn; i++) {
         let createDiv = document.createElement("div");
         gridDiv.append(createDiv);
@@ -20,12 +18,6 @@ function setUpTable() {
         tab[i].index = i;
         tab[i].refHtmlElement = createDiv;
     }
-
-    // let length = cases.length;
-    // while (length--) {
-    //     const i = length;
-    //     tab[length].caseIndex = length;
-    // }
 }
 
 function putRandomBombs() {

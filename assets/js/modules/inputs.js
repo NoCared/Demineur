@@ -1,6 +1,6 @@
 import { hideAll, showAll } from "./display.js";
 import { tab } from "./setupGrid.js";
-import { discover } from "./gameplay.js";
+import { discover, putFlag } from "./gameplay.js";
 
 let revealed = false;
 
@@ -18,6 +18,11 @@ function setupInput() {
 
             discover(i);
         });
+        tab[i].refHtmlElement.addEventListener('contextmenu', function(ev) {
+            ev.preventDefault();
+            putFlag(i);
+            return false;
+        }, false);
     }
 };
 
