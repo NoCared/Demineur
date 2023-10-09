@@ -1,4 +1,5 @@
 import { tab } from "./setupGrid.js";
+import { sizeColumn,sizeRow } from "./setupGrid.js";
 
 function verify(index) {
     return (0 <= index && index < tab.length) ? tab[index].number : -1;
@@ -18,17 +19,17 @@ function lookAt(previousIndex, index) {
 
 function lookAround(index) {
 
-    let eulerCurrent = Math.floor(index / 10);
-    let eulerPrevious = Math.floor((index - 1) / 10);
-    let eulerNext = Math.floor((index + 1) / 10);
-    lookAt(index, index - 10);
+    let eulerCurrent = Math.floor(index / sizeRow);
+    let eulerPrevious = Math.floor((index - 1) / sizeRow);
+    let eulerNext = Math.floor((index + 1) / sizeRow);
+    lookAt(index, index - sizeRow);
     if (eulerCurrent === eulerPrevious) {
         lookAt(index, index - 1);
     }
     if (eulerCurrent === eulerNext) {
         lookAt(index, index + 1);
     }
-    lookAt(index, index + 10);
+    lookAt(index, index + sizeRow);
 }
 
 function openCase(index) {
