@@ -57,5 +57,17 @@ function putFlag(caseIndex) {
     }
 }
 
+function randomStart()
+{
+    let tabTemp = [];
+    for (let i = 0; i< tab.length;i++)
+    {
+        if (tab[i].number ===0)
+        {
+            tabTemp.push(i);
+        }
+    }
+    discover(tabTemp[Math.random()*tabTemp.length-1]);
+}
 
-export { discover, putFlag };
+export { discover, putFlag,randomStart };
