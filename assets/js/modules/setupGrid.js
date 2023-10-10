@@ -28,7 +28,6 @@ function putRandomBombs() {
         const index = randomNumberColumn * sizeRow + randomNumberRow;
 
         if (checkIfBomb(index) == false) {
-            tab[index].refHtmlElement.classList.toggle("bombCase");
             tab[index].isBomb = true;
         }
         else {
@@ -65,10 +64,6 @@ function fillNumber() {
     for (let i = 0; i < tab.length; i++) {
         if (tab[i].isBomb == false) {
             tab[i].number = getBombNumberNear(i);
-            tab[i].refHtmlElement.classList.add(`nb${tab[i].number}`);
-            if (tab[i].number != 0) {
-                tab[i].refHtmlElement.innerText = tab[i].number;
-            }
         }
     }
 }

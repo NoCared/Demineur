@@ -24,14 +24,14 @@ function lookAround(index) {
     let eulerNext = Math.floor((index + 1) / sizeRow);
     lookAt(index, index - sizeRow);
     if (eulerCurrent === eulerPrevious) {
-        lookAt(index, index - 1 -sizeRow);
+        lookAt(index, index - 1 - sizeRow);
         lookAt(index, index - 1);
-        lookAt(index, index - 1 +sizeRow);
+        lookAt(index, index - 1 + sizeRow);
     }
     if (eulerCurrent === eulerNext) {
-        lookAt(index, index + 1 -sizeRow);
+        lookAt(index, index + 1 - sizeRow);
         lookAt(index, index + 1);
-        lookAt(index, index + 1 +sizeRow);
+        lookAt(index, index + 1 + sizeRow);
     }
     lookAt(index, index + sizeRow);
 }
@@ -39,6 +39,17 @@ function lookAround(index) {
 function openCase(index) {
     tab[index].refHtmlElement.classList.remove("hidden");
     tab[index].isDisplayed = true;
+
+
+    if (tab[index].isBomb) {
+        tab[index].refHtmlElement.classList.toggle("bombCase");
+    }
+    else {
+        tab[index].refHtmlElement.classList.add(`nb${tab[index].number}`);
+        if (tab[index].number != 0) {
+            tab[index].refHtmlElement.innerText = tab[index].number;
+        }
+    }
 }
 
 
@@ -61,18 +72,15 @@ function putFlag(caseIndex) {
     }
 }
 
-function randomStart()
-{
+function randomStart() {
     let tabTemp = [];
-    for (let i = 0; i< tab.length;i++)
-    {
-        if (tab[i].number ===0)
-        {
+    for (let i = 0; i < tab.length; i++) {
+        if (tab[i].number === 0) {
             tabTemp.push(i);
         }
     }
-    let randNumer = Math.floor(Math.random()*(tabTemp.length-1));
+    let randNumer = Math.floor(Math.random() * (tabTemp.length - 1));
     discover(tabTemp[randNumer]);
 }
 
-export { discover, putFlag,randomStart };
+export { discover, putFlag, randomStart };
