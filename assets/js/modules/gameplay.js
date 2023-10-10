@@ -24,10 +24,14 @@ function lookAround(index) {
     let eulerNext = Math.floor((index + 1) / sizeRow);
     lookAt(index, index - sizeRow);
     if (eulerCurrent === eulerPrevious) {
+        lookAt(index, index - 1 -sizeRow);
         lookAt(index, index - 1);
+        lookAt(index, index - 1 +sizeRow);
     }
     if (eulerCurrent === eulerNext) {
+        lookAt(index, index + 1 -sizeRow);
         lookAt(index, index + 1);
+        lookAt(index, index + 1 +sizeRow);
     }
     lookAt(index, index + sizeRow);
 }
@@ -67,7 +71,8 @@ function randomStart()
             tabTemp.push(i);
         }
     }
-    discover(tabTemp[Math.random()*tabTemp.length-1]);
+    let randNumer = Math.floor(Math.random()*(tabTemp.length-1));
+    discover(tabTemp[randNumer]);
 }
 
 export { discover, putFlag,randomStart };
