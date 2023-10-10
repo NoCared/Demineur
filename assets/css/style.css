@@ -22,22 +22,22 @@ main{
 /* #region GRID */
 
 #grid{
-    border: black 3px solid;
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows:repeat(10, 1fr);
 }
 /* #endregion */
 
 /* #region CASES */
 
 .case{
-    border: black 1px solid;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
+    border: rgba(49, 49, 49, 0.705) .5px solid;
+    width: 3.8vw;
+    height: 3.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
+    font-size: 3vw;
 }
 
 
@@ -74,7 +74,6 @@ main{
 
 .hidden{
     background-color: orange;
-    content-visibility: hidden;
 }
 
 /* #endregion */
