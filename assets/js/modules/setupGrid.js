@@ -24,7 +24,7 @@ function putRandomBombs() {
     const bombNumber = tab.length / 5;
     for (let i = 0; i < bombNumber; i++) {
         const randomNumberRow = Math.round(Math.random() * (sizeRow - 1));
-        const randomNumberColumn = Math.round(Math.random() * (sizeRow - 1));
+        const randomNumberColumn = Math.round(Math.random() * (sizeColumn - 1));
         const index = randomNumberColumn * sizeRow + randomNumberRow;
 
         if (checkIfBomb(index) == false) {

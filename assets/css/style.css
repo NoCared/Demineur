@@ -1,34 +1,41 @@
 /* #region MAIN_ORGANISATION */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-main{
+img{
+    width: 100%;
+}
+
+main {
 
     height: 100vh;
     width: 100vw;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
+
 /* #endregion */
 
 
 /* #region GRID */
 
-#grid{
+#grid {
     display: grid;
+    margin: 2vh 0 0 0;
 }
+
 /* #endregion */
 
 /* #region CASES */
 
-.case{
+.case {
     border: rgba(49, 49, 49, 0.705) .5px solid;
     width: 3.8vw;
     height: 3.8vw;
@@ -40,38 +47,47 @@ main{
 }
 
 
-.nb0{
+.nb0 {
     background-color: rgb(243, 243, 154);
 }
-.nb1{
+
+.nb1 {
     color: blue;
 }
-.nb2{
+
+.nb2 {
     color: green;
 }
-.nb3{
+
+.nb3 {
     color: red;
 }
-.nb4{
+
+.nb4 {
     color: orange;
 }
-.nb5{
+
+.nb5 {
     color: magenta;
 }
-.nb6{
+
+.nb6 {
     color: blue;
 }
-.nb7{
+
+.nb7 {
     color: darkmagenta;
 }
-.nb8{
+
+.nb8 {
     color: salmon;
 }
+
 /* #endregion */
 
 /* #region HIDDEN */
 
-.hidden{
+.hidden {
     background-color: orange;
 }
 
@@ -79,7 +95,7 @@ main{
 
 /* #region FLAG */
 
-.flag{
+.flag {
     background-image: url("../img/flag.png");
     background-size: cover;
 }
@@ -87,7 +103,7 @@ main{
 /* #endregion */
 
 /* #region BOMBS */
-.bombCase{
+.bombCase {
     background-color: red;
 }
 
@@ -96,21 +112,63 @@ main{
 
 /* #region ATH */
 
-#hud{
-    background-color: black;
-    width: 100%;
-    height: 10vh;
+#hud {
+    border: 3px solid green;
+    width: 80%;
+    margin: 2vh 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+#hud #interactableHud,
+#hud #infoCreation {
+    height: 10vh;
+    margin: 1rem;
+}
+
+#hud #interactableHud {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hud #interactableHud #restartButton,
+#hud #interactableHud #redimension {
+    margin: 2rem;
+}
+
+#hud #interactableHud #restartButton input {
+    background-image: url(../img/refresh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent; 
+    border: none;
+    height: 64px;
+    width: 64px;
+}
+
 
 
 /* #endregion */
 
 
+/* #region Responsive */
+
 @media only screen and (min-width: 800px) {
-    .case{
+    .case {
         border: rgba(49, 49, 49, 0.705) 1px solid;
         width: 30px;
         height: 30px;
         font-size: 2.2vw;
     }
-  }
+
+    #hud {
+        width: 640px;
+    }
+}
+
+/* #endregion */
