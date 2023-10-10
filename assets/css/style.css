@@ -123,6 +123,14 @@ main {
     align-items: center;
 }
 
+#hud input{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent; 
+    border: none;
+}
+
 #hud #interactableHud,
 #hud #infoCreation {
     height: 10vh;
@@ -142,15 +150,25 @@ main {
 
 #hud #interactableHud #restartButton input {
     background-image: url(../img/refresh.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent; 
-    border: none;
     height: 64px;
     width: 64px;
 }
+#hud #interactableHud #redimension{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
+#hud #interactableHud #redimensionButtons{
+    display: flex;
+    justify-content: space-between;
+}
+#hud #interactableHud #redimensionButtons div{
+    height: 64px;
+    width: 64px;
+    padding: 1rem;
+}
 
 
 /* #endregion */
