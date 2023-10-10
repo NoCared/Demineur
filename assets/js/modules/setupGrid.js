@@ -1,7 +1,9 @@
 import { Case } from "./case.js";
+import { setupInput } from "./inputs.js";
+import { randomStart } from "./gameplay.js";
 
-const sizeRow = 24;
-const sizeColumn = 24;
+let sizeRow = 24;
+let sizeColumn = 24;
 const tab = [];
 
 function setUpTable() {
@@ -13,7 +15,7 @@ function setUpTable() {
     for (let i = 0; i < sizeRow * sizeColumn; i++) {
         let createDiv = document.createElement("div");
         gridDiv.append(createDiv);
-        createDiv.classList.add("case");
+        createDiv.classList.add("case", "hidden");
         tab[i] = new Case;
         tab[i].index = i;
         tab[i].refHtmlElement = createDiv;
@@ -68,4 +70,22 @@ function fillNumber() {
     }
 }
 
-export { tab, setUpTable, putRandomBombs, checkIfBomb, fillNumber, sizeRow, sizeColumn }
+function init(fromScratch = true) {
+    setUpTable();
+    putRandomBombs();
+    fillNumber();
+    setupInput();
+    randomStart();
+}
+
+function restart() {
+    tab.splice(0,tab.length);
+    const gridDiv = document.getElementById("grid");
+    while (gridDiv.firstChild) {
+        gridDiv.removeChild(gridDiv.lastChild);
+    }
+    init();
+
+}
+
+export { tab, init, restart, checkIfBomb, sizeRow, sizeColumn }
