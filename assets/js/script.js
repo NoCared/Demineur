@@ -8,7 +8,8 @@ init();
 
 
 const restartButton = document.querySelectorAll(".restartButton input");
-restartButton.array.forEach(element => {
+console.dir(restartButton);
+restartButton.forEach(element => {
     element.addEventListener("click",restart);
 });
 
