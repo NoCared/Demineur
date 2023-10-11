@@ -29,6 +29,11 @@ main {
     background-image: url(../img/refresh.png);
     height: 64px;
     width: 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
 }
 /* #endregion */
 
@@ -250,10 +255,21 @@ main {
   height: 40vh;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
-#overlayEnd #overlayEndContainer #overlayWin{
-
+#overlayEnd #overlayEndContainer #overlayResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#overlayEnd #overlayEndContainer div{
+    font-size: 4rem;
+    font-weight: bolder;
 }
 
 
