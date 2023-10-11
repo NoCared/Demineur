@@ -37,8 +37,6 @@ main {
 
 .case {
     border: rgba(49, 49, 49, 0.705) .5px solid;
-    width: 3.8vw;
-    height: 3.8vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,11 +232,8 @@ main {
 }
 
 @media only screen and (min-width: 800px) {
-    .case {
-        border: rgba(49, 49, 49, 0.705) 1px solid;
-        width: 30px;
-        height: 30px;
-        font-size: 2.2vw;
+    .case{
+        font-size: 2vmin;
     }
 
     #hud {

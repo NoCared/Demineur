@@ -9,8 +9,16 @@ const tab = [];
 function setUpTable() {
 
     const gridDiv = document.getElementById("grid");
-    gridDiv.style.gridTemplateColumns = 'repeat(' + sizeColumn + ', 1fr)';
-    gridDiv.style.gridTemplateRows = 'repeat(' + sizeRow + ', 1fr)';
+    // Calculer la taille de la grille en pixels
+    const gridSize = Math.min(window.innerWidth, window.innerHeight) * 0.8; // 80% de la taille de la fenêtre
+    gridDiv.style.width = gridSize + "px";
+    gridDiv.style.height = gridSize + "px";
+
+    // Calculer la taille des cases en fonction de la grille
+    const cellSize = gridSize / Math.max(sizeColumn, sizeRow);
+
+    gridDiv.style.gridTemplateColumns = 'repeat(' + sizeColumn + ', ' + cellSize + 'px)';
+    gridDiv.style.gridTemplateRows = 'repeat(' + sizeRow + ', ' + cellSize + 'px)';
 
     for (let i = 0; i < sizeRow * sizeColumn; i++) {
         let createDiv = document.createElement("div");
@@ -20,6 +28,7 @@ function setUpTable() {
         tab[i].index = i;
         tab[i].refHtmlElement = createDiv;
     }
+
 }
 
 function putRandomBombs() {
@@ -80,7 +89,7 @@ function init(fromScratch = true) {
 }
 
 function restart() {
-    tab.splice(0,tab.length);
+    tab.splice(0, tab.length);
     const gridDiv = document.getElementById("grid");
     while (gridDiv.firstChild) {
         gridDiv.removeChild(gridDiv.lastChild);
@@ -89,10 +98,8 @@ function restart() {
 
 }
 
-function redimension(modifier)
-{
-    if (sizeColumn + modifier >= 5)
-    {
+function redimension(modifier) {
+    if (sizeColumn + modifier >= 5) {
         sizeColumn += modifier;
         sizeRow += modifier;
         document.querySelector("#rowLenght").textContent = sizeRow;
