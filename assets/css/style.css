@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-img{
+img {
     width: 100%;
 }
 
@@ -121,31 +121,58 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    height: 60vh;
 }
 
-#hud input{
+#hud input {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
 }
 
 #hud #interactableHud,
 #hud #infoCreation {
-    height: 10vh;
     margin: 1rem;
 }
 
 #hud #interactableHud {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 #hud #interactableHud #restartButton,
-#hud #interactableHud #redimension {
-    margin: 2rem;
+#hud #interactableHud #redimension,
+#hud #interactableHud #bombNumberDisplay {
+    padding: 4vh 5vw;
+}
+
+#hud #interactableHud #restartButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 2vw;
+}
+
+#hud #interactableHud #bombNumberDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hud #interactableHud #bombNumberDisplay span {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2px .6rem 0 0;
+}
+
+#hud #interactableHud #bombNumberDisplay img {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 #hud #interactableHud #restartButton input {
@@ -153,21 +180,30 @@ main {
     height: 64px;
     width: 64px;
 }
-#hud #interactableHud #redimension{
+
+#hud #interactableHud #redimension {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+
+    margin: .6rem 2rem;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    border: 1px solid black;
 }
 
-#hud #interactableHud #redimensionButtons{
+#hud #interactableHud #redimensionButtons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
-#hud #interactableHud #redimensionButtons div{
-    height: 64px;
-    width: 64px;
-    padding: 1rem;
+
+#hud #interactableHud #redimensionButtons div {
+    height: 32px;
+    width: 32px;
+    padding: .3rem .3rem;
 }
 
 
@@ -175,6 +211,28 @@ main {
 
 
 /* #region Responsive */
+
+@media only screen and (min-width: 528px) {
+    #hud #interactableHud {
+        flex-direction: row;
+    }
+
+    #hud #interactableHud #restartButton,
+    #hud #interactableHud #redimension,
+    #hud #interactableHud #bombNumberDisplay {
+        width: 30%;
+    }
+
+    #hud #interactableHud #redimension {
+        padding: 0;
+        height: 10vh;
+        margin: 1vh .5rem;
+    }
+    #hud #interactableHud #redimensionButtons div {
+        height: 32px;
+        width: 30%;
+    }
+}
 
 @media only screen and (min-width: 800px) {
     .case {
