@@ -10,7 +10,7 @@ function setUpTable() {
 
     const gridDiv = document.getElementById("grid");
     // Calculer la taille de la grille en pixels
-    const gridSize = Math.min(window.innerWidth, window.innerHeight) * 0.7; // 70% de la taille de la fenêtre
+    const gridSize = Math.min(window.innerWidth, window.innerHeight) * 0.8; // 80% de la taille de la fenêtre
     gridDiv.style.width = gridSize + "px";
     gridDiv.style.height = gridSize + "px";
 
