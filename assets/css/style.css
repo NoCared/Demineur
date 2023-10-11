@@ -111,7 +111,6 @@ main {
 /* #region ATH */
 
 #hud {
-    border: 3px solid green;
     width: 80%;
     margin: 2vh 0;
 
@@ -130,10 +129,6 @@ main {
     border: none;
 }
 
-#hud #interactableHud,
-#hud #infoCreation {
-    margin: 1rem;
-}
 
 #hud #interactableHud {
     display: flex;
@@ -199,10 +194,9 @@ main {
 }
 
 #hud #interactableHud #redimensionButtons div {
-    height: 32px;
-    width: 32px;
     padding: .3rem .3rem;
 }
+
 
 
 /* #endregion */
