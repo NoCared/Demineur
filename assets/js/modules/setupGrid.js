@@ -23,7 +23,7 @@ function setUpTable() {
 }
 
 function putRandomBombs() {
-    const bombNumber = tab.length / 5;
+    const bombNumber = Math.floor(tab.length / 5);
     for (let i = 0; i < bombNumber; i++) {
         const randomNumberRow = Math.round(Math.random() * (sizeRow - 1));
         const randomNumberColumn = Math.round(Math.random() * (sizeColumn - 1));
@@ -36,6 +36,7 @@ function putRandomBombs() {
             i--;
         }
     }
+    document.querySelector("#bombNumberDisplay span").textContent = bombNumber;
 }
 
 function checkIfBomb(index) {
@@ -88,4 +89,17 @@ function restart() {
 
 }
 
-export { tab, init, restart, checkIfBomb, sizeRow, sizeColumn }
+function redimension(modifier)
+{
+    if (sizeColumn + modifier >= 5)
+    {
+        sizeColumn += modifier;
+        sizeRow += modifier;
+        document.querySelector("#rowLenght").textContent = sizeRow;
+        document.querySelector("#columnLenght").textContent = sizeColumn;
+
+        restart();
+    }
+}
+
+export { tab, init, restart, redimension, checkIfBomb, sizeRow, sizeColumn }

@@ -229,7 +229,6 @@ main {
         margin: 1vh .5rem;
     }
     #hud #interactableHud #redimensionButtons div {
-        height: 32px;
         width: 30%;
     }
 }
