@@ -23,6 +23,14 @@ main {
 
 /* #endregion */
 
+/* #region COMMON */
+
+.restartButton input {
+    background-image: url(../img/refresh.png);
+    height: 64px;
+    width: 64px;
+}
+/* #endregion */
 
 /* #region GRID */
 
@@ -129,7 +137,6 @@ main {
     border: none;
 }
 
-
 #hud #interactableHud {
     display: flex;
     flex-direction: column;
@@ -138,7 +145,7 @@ main {
     width: 100%;
 }
 
-#hud #interactableHud #restartButton,
+#hud #interactableHud .restartButton,
 #hud #interactableHud #redimension,
 #hud #interactableHud #bombNumberDisplay {
     padding: 4vh 5vw;
@@ -168,11 +175,7 @@ main {
     height: 2.5rem;
 }
 
-#hud #interactableHud #restartButton input {
-    background-image: url(../img/refresh.png);
-    height: 64px;
-    width: 64px;
-}
+
 
 #hud #interactableHud #redimension {
     display: flex;
@@ -202,6 +205,47 @@ main {
 /* #endregion */
 
 
+/* #region OVERLAY */
+
+#overlayEnd {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+#overlayEnd #overlayEndContainer{
+    position: absolute;
+  top: 40%;
+  left: 50%;
+  background-color: beige;
+  width: 70vw;
+  height: 40vh;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+#overlayEnd #overlayEndContainer #overlayWin{
+
+}
+
+
+/* #endregion */
+
 /* #region Responsive */
 
 @media only screen and (min-width: 528px) {
@@ -220,13 +264,14 @@ main {
         height: 10vh;
         margin: 1vh .5rem;
     }
+
     #hud #interactableHud #redimensionButtons div {
         width: 30%;
     }
 }
 
 @media only screen and (min-width: 800px) {
-    .case{
+    .case {
         font-size: 2vmin;
     }
 

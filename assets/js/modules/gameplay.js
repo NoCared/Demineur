@@ -1,5 +1,6 @@
 import { tab } from "./setupGrid.js";
-import { sizeColumn, sizeRow } from "./setupGrid.js";
+import { sizeColumn, sizeRow, getNumberCaseToDiscover, setNumberCaseToDiscover } from "./setupGrid.js";
+import { win, lose } from "./gameEnd.js";
 
 function verify(index) {
     return (0 <= index && index < tab.length) ? tab[index].number : -1;
@@ -49,15 +50,26 @@ function openCase(index) {
         if (tab[index].number != 0) {
             tab[index].refHtmlElement.innerText = tab[index].number;
         }
+
+
+        setNumberCaseToDiscover(getNumberCaseToDiscover() - 1);
+        if (getNumberCaseToDiscover() <= 0) {
+            return true;
+        }
     }
+    return false;
 }
 
 
 function discover(caseIndex) {
     if (tab[caseIndex].isDisplayed === false && tab[caseIndex].isFlagged === false) {
-        openCase(caseIndex);
-        if (tab[caseIndex].isBomb) {
-            console.log("LOSE");
+
+        const hasWow = openCase(caseIndex);
+        if (hasWow === true) {
+            win();
+        }
+        else if (tab[caseIndex].isBomb) {
+            lose();
         }
         else {
             lookAround(caseIndex);

@@ -7,8 +7,10 @@ init();
 
 
 
-const restartButton = document.querySelector("#restartButton input");
-restartButton.addEventListener("click",restart);
+const restartButton = document.querySelectorAll(".restartButton input");
+restartButton.array.forEach(element => {
+    element.addEventListener("click",restart);
+});
 
 const addDimensionButton = document.querySelector("#redimensionAdd img");
 addDimensionButton.addEventListener("click",() => redimension(1));

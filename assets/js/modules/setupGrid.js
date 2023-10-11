@@ -4,6 +4,7 @@ import { randomStart } from "./gameplay.js";
 
 let sizeRow = 24;
 let sizeColumn = 24;
+let numberCaseToDiscover = 0;
 const tab = [];
 
 function setUpTable() {
@@ -29,6 +30,8 @@ function setUpTable() {
         tab[i].refHtmlElement = createDiv;
     }
 
+    // REMETTRE A NONE
+    document.getElementById("overlayEnd").style.display = "none";
 }
 
 function putRandomBombs() {
@@ -45,6 +48,7 @@ function putRandomBombs() {
             i--;
         }
     }
+    numberCaseToDiscover = tab.length - bombNumber;
     document.querySelector("#bombNumberDisplay span").textContent = bombNumber;
 }
 
@@ -109,4 +113,13 @@ function redimension(modifier) {
     }
 }
 
-export { tab, init, restart, redimension, checkIfBomb, sizeRow, sizeColumn }
+function getNumberCaseToDiscover()
+{
+    return numberCaseToDiscover;
+}
+function setNumberCaseToDiscover(number)
+{
+    numberCaseToDiscover = number;
+}
+
+export { tab, init, restart, redimension, checkIfBomb, sizeRow, sizeColumn, getNumberCaseToDiscover,setNumberCaseToDiscover }
