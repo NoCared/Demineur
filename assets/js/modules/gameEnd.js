@@ -6,7 +6,7 @@ function displayResult(isWin)
     if (isWin)
     {
         document.getElementById("overlayWin").style.display="block";
-        document.getElementById("overlayLose").style.display="nonr";
+        document.getElementById("overlayLose").style.display="none";
     }
     else{
         document.getElementById("overlayWin").style.display="none";
